@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { backendURL } from "utils/exportable";
 
 export const UserAccount = () => {
   const [user, setUser] = useState(null);
@@ -17,7 +18,7 @@ export const UserAccount = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/user/${storedUser.userId}`);
+        const response = await fetch(`${backendURL}/user/${storedUser.userId}`);
         const data = await response.json();
 
         if (!response.ok) {

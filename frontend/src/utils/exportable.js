@@ -1,0 +1,1 @@
+export const backendURL='https://zepto-food-delivery.onrender.com'

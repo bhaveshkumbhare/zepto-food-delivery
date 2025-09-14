@@ -4,6 +4,7 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import { Checkbox } from '../../../components/ui/Checkbox';
+import { backendURL } from 'utils/exportable';
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -103,50 +104,6 @@ const RegistrationForm = () => {
     }
   };
 
-//   const handleSubmit = async (e) => {
-//     e?.preventDefault();
-
-//     if (!validateForm()) {
-//       return;
-//     }
-
-//     // Register the user
-    
-
-//     setIsLoading(true);
-
-//     try {
-//       const response = await fetch("http://localhost:4000/user-account-details", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(formData),
-//     });
-
-//     console.log(data)
-
-//     const data = await response.json();
-
-//     if (!response.ok) {
-//       // show error returned from backend
-//       setErrors({ submit: data.error || "Registration failed" });
-//       return;
-//     }
-
-//     // success → redirect to restaurant menu
-//     navigate("/restaurant-menu", {
-//       state: {
-//         message: "Registration successful! Welcome to ZeptoFood!",
-//         newUser: true,
-//       },
-//     });
-// } catch (error) {
-//     setErrors({ submit: "Server error. Please try again." });
-//   } finally {
-//     setIsLoading(false);
-//   }}
-
 const handleSubmit = async (e) => {
   e?.preventDefault();
 
@@ -157,7 +114,7 @@ const handleSubmit = async (e) => {
   setIsLoading(true);
 
   try {
-    const response = await fetch("http://localhost:4000/user-account-details", {
+    const response = await fetch(`${backendURL}/user-account-details`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
