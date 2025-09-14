@@ -1,0 +1,12 @@
+*/node_modules
+*/.env
+
+
+.DS_Store
+node_modules
+.idea
+package-lock.json
+/build
+.vscode/
+.idea/
+vite.config.*s.*
